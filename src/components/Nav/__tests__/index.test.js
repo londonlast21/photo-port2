@@ -14,9 +14,9 @@ describe('Nav component', () => {
     // snapshot test
     it('matches snapshot', () => {
         const { asFragment } = render(<Nav />);
-        // assert value comparison
+      
         expect(asFragment()).toMatchSnapshot();
-    });
+      });
 })
 
 describe('emoji is visible', () => {
