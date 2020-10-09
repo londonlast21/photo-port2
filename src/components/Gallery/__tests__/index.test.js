@@ -13,3 +13,9 @@ describe('Gallery is rendering', () => {
     render(<Gallery currentCategory={portrait} />);
   });
 })
+
+// snapshot test
+it('matches snapshot', () => {
+    const { asFragment } = render(<Gallery currentCategory={portrait} />)
+    expect(asFragment()).toMatchSnaphot()
+})
