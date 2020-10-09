@@ -19,3 +19,9 @@ it('matches snapshot', () => {
     const { asFragment } = render(<Gallery currentCategory={portrait} />)
     expect(asFragment()).toMatchSnaphot()
 })
+
+// test for the h1 being portraits
+it('renders', () => {
+    const { getByTesId } = render(<Gallery currentCategory={portrait} />)
+    expect(getByTestId('h1tag')).toHaveTextContent('Portraits')
+})
