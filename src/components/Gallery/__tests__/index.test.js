@@ -17,11 +17,11 @@ describe('Gallery is rendering', () => {
 // snapshot test
 it('matches snapshot', () => {
     const { asFragment } = render(<Gallery currentCategory={portrait} />)
-    expect(asFragment()).toMatchSnaphot()
+    expect(asFragment()).toMatchSnapshot()
 })
 
 // test for the h1 being portraits
 it('renders', () => {
-    const { getByTesId } = render(<Gallery currentCategory={portrait} />)
+    const { getByTestId } = render(<Gallery currentCategory={portrait} />)
     expect(getByTestId('h1tag')).toHaveTextContent('Portraits')
 })
