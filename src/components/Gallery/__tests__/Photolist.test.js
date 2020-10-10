@@ -8,7 +8,7 @@ afterEach(cleanup)
 
 describe('Photolist is rendering', () => {
     it('renders', () => {
-        renderIntoDocument(<PhotoList />);
+        render(<PhotoList />);
     });
 
     it('renders', () => {
