@@ -4,10 +4,7 @@ import '@testing-library/jest-dom/extend-expect'
 import Modal from '..'
 
 
-const mockToggleModal = {
-    ;
-}
-
+const mockToggleModal = jest.fn();
 
 const currentPhoto = {
     name: 'Park bench',
@@ -22,13 +19,17 @@ describe('Modal component', () => {
 
     it('renders', () => {
         // baseline render component test
-        render(<Modal currentPhoto={currentPhoto} />)
-    })
+        render(<Modal 
+            onClose={mockToggleModal}
+            currentPhoto={currentPhoto} />)
+    });
     // snapshot test
     it('matches snapshot', () => {
-        const { asFragment } = render(<Modal />)
+        const { asFragment } = render(<Modal 
+        onClose={mockToggleModal}
+        currentPhoto={currentPhoto}/>)
         expect(asFragment()).toMatchSnapshot()
-    })
+    });
     describe('Click Event', () => {
         it('calls onClose handler', () => {
           // Arrange: Render Modal
